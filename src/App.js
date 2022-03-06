@@ -18,7 +18,7 @@ const App = () => {
   const [places, setPlaces] = useState([]);
 
   const [coordinates, setCoordinates] = useState({});
-  const [bounds, setBounds] = useState(null);
+  const [bounds, setBounds] = useState({});
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -35,7 +35,7 @@ const App = () => {
   }, [coordinates, bounds]);
 
   return (
-    <div>
+    <>
       <CssBaseline />
       <Header />
       <Grid container item spacing={3} style={{ width: "100%" }}>
@@ -47,10 +47,11 @@ const App = () => {
             setCoordinates={setCoordinates}
             setBounds={setBounds}
             coordinates={coordinates}
+            places={places}
           />
         </Grid>
       </Grid>
-    </div>
+    </>
   );
 };
 

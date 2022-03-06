@@ -40,7 +40,7 @@ const List = ({ places }) => {
           <MenuItem value="4.5">Above 4.5</MenuItem>
         </Select>
       </FormControl>
-      <Grid conatiner spacing={3} className={classes.list}>
+      <Grid container item spacing={3} className={classes.list}>
         {places?.map((place, i) => (
           <Grid item key={i} xs={12}>
             <PlaceDetails place={place} />
